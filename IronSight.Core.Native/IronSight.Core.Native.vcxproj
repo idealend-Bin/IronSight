@@ -173,6 +173,7 @@
     </ClCompile>
     <ClCompile Include="System\SystemMethods.cpp" />
     <ClCompile Include="System\SystemMonitor.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="Utilities.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
