@@ -1,0 +1,200 @@
+﻿<Window x:Class="IronSight.App.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:IronSight.App.UI.ViewModels"
+        xmlns:views="clr-namespace:IronSight.App.UI.Views"
+        mc:Ignorable="d"
+        Title="IronSight" Height="700" Width="1100"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="ThreeDBorderWindow"
+        FontFamily="Segoe UI Variable Display, Segoe UI, Microsoft YaHei UI"
+        AllowsTransparency="False"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="ClearType"
+        TextOptions.TextHintingMode="Fixed"
+        RenderOptions.ClearTypeHint="Enabled"
+        RenderOptions.BitmapScalingMode="HighQuality">
+    <!--AllowsTransparency="True" -->
+
+    <!-- 现代窗口框架 -->
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="0"
+                      ResizeBorderThickness="8"
+                      GlassFrameThickness="0"
+                      CornerRadius="12"
+                      UseAeroCaptionButtons="True"/>
+    </WindowChrome.WindowChrome>
+
+    <!--<WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="0"
+                      CornerRadius="0"
+                      CaptionHeight="30" />
+    </WindowChrome.WindowChrome> -->
+
+    <!-- 主窗口容器 -->
+    <Border CornerRadius="12"
+            Background="{StaticResource PrimaryBackground}"
+            BorderBrush="#35FFFFFF"
+            BorderThickness="1">
+
+        <Border.DataContext>
+            <vm:MainViewModel />
+        </Border.DataContext>
+
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="40" ShadowDepth="0" Opacity="0.5" Color="Black"/>
+        </Border.Effect>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="260"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ==================== 侧边栏 ==================== -->
+            <Border Background="{StaticResource SecondaryBackground}"
+                    CornerRadius="12,0,0,12">
+                <!-- 顶部微光效果 -->
+                <Border.OpacityMask>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.OpacityMask>
+
+                <Grid>
+                    <!-- 顶部光泽 -->
+                    <Border Height="100" VerticalAlignment="Top" CornerRadius="12,0,0,0">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Color="#08FFFFFF" Offset="0"/>
+                                <GradientStop Color="#00FFFFFF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+
+                    <!-- 右边框线 -->
+                    <Border HorizontalAlignment="Right" Width="1" Background="#20FFFFFF"/>
+
+                    <DockPanel>
+                        <!-- Logo区域 -->
+                        <Border DockPanel.Dock="Top" Margin="24,24,24,32">
+                            <StackPanel Orientation="Horizontal">
+                                <Border Width="40" Height="40" CornerRadius="10">
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                            <GradientStop Color="#60CDFF" Offset="0"/>
+                                            <GradientStop Color="#0078D4" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                    <TextBlock Text="&#xE7EE;"
+                                               FontFamily="Segoe Fluent Icons"
+                                               FontSize="18"
+                                               Foreground="White"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center"/>
+                                </Border>
+                                <StackPanel Margin="14,0,0,0" VerticalAlignment="Center">
+                                    <TextBlock Text="IRONSIGHT"
+                                               FontSize="15"
+                                               FontWeight="Bold"
+                                               Foreground="{StaticResource TextPrimary}"
+                                               />
+                                    <TextBlock Text="系统监控"
+                                               FontSize="11"
+                                               Foreground="{StaticResource TextTertiary}"
+                                               Margin="0,2,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
+                        <!-- 底部设置按钮 -->
+                        <StackPanel DockPanel.Dock="Bottom" Margin="0,0,0,16">
+                            <Separator Style="{StaticResource FluentSeparator}"/>
+                            <RadioButton x:Name="NavSettings" Content="设置" Tag="&#xE713;" CommandParameter="5" Style="{StaticResource NavRadioButtonStyle}" Checked="Nav_Checked"/>
+                            <RadioButton x:Name="NavAbout" Content="关于" Tag="&#xE946;" CommandParameter="6" Style="{StaticResource NavRadioButtonStyle}" Checked="Nav_Checked"/>
+                        </StackPanel>
+
+                        <!-- 导航菜单 -->
+                        <StackPanel Margin="0,0,0,0">
+                            <TextBlock Text="导航" FontSize="11" Foreground="{StaticResource TextTertiary}" Margin="24,0,0,12" FontWeight="Medium"/>
+
+                            <RadioButton x:Name="NavDashboard" Content="仪表盘" Tag="&#xE80F;" CommandParameter="0" Style="{StaticResource NavRadioButtonStyle}" IsChecked="True" Checked="Nav_Checked"/>
+                            <RadioButton x:Name="NavClipboard" Content="剪贴板" Tag="&#xE8C8;" CommandParameter="1" Style="{StaticResource NavRadioButtonStyle}" Checked="Nav_Checked"/>
+                            <RadioButton x:Name="NavMemory" Content="内存加速" Tag="&#xE950;" CommandParameter="2" Style="{StaticResource NavRadioButtonStyle}" Checked="Nav_Checked"/>
+                            <RadioButton x:Name="NavProcess" Content="进程管理" Tag="&#xE7F4;" CommandParameter="3" Style="{StaticResource NavRadioButtonStyle}" Checked="Nav_Checked"/>
+                            <RadioButton x:Name="NavNetwork" Content="网络监控" Tag="&#xE968;" CommandParameter="4" Style="{StaticResource NavRadioButtonStyle}" Checked="Nav_Checked"/>
+                        </StackPanel>
+                    </DockPanel>
+                </Grid>
+            </Border>
+
+            <!-- ==================== 主内容区 ==================== -->
+            <Grid Grid.Column="1">
+                <!-- 自定义标题栏 -->
+                <Border Height="48" VerticalAlignment="Top"
+                        MouseDown="TitleBar_MouseDown"
+                        Background="Transparent"
+                        Panel.ZIndex="100">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" Margin="28,0,0,0" VerticalAlignment="Center">
+                            <Ellipse Width="8" Height="8" Fill="{StaticResource SuccessBrush}"/>
+                            <TextBlock Text="系统运行正常"
+                                       VerticalAlignment="Center"
+                                       Margin="10,0,0,0"
+                                       FontSize="12"
+                                       Foreground="{StaticResource TextTertiary}"/>
+                        </StackPanel>
+
+                        <!-- 窗口控制按钮 -->
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                            <Button Content="&#xE921;" Style="{StaticResource WindowControlButton}" Click="Minimize_Click" Height="42"/>
+                            <Button Content="&#xE922;" Style="{StaticResource WindowControlButton}" Click="Maximize_Click" Height="42"/>
+                            <Button Style="{StaticResource CloseButton}" Click="Close_Click" Height="45"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+                <!-- 页面内容 -->
+                <TabControl x:Name="MainTabControl"
+                            Margin="28,56,28,28"
+                            BorderThickness="0"
+                            Background="Transparent"
+                            SelectedIndex="0">
+                    <TabControl.Resources>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </Style>
+                    </TabControl.Resources>
+
+                    <TabItem>
+                        <views:DashboardView/>
+                    </TabItem>
+                    <TabItem>
+                        <views:ClipboardView/>
+                    </TabItem>
+                    <TabItem>
+                        <views:MemoryCleanerView/>
+                    </TabItem>
+                    <TabItem>
+                        <views:ProcessManagerView/>
+                    </TabItem>
+                    <TabItem>
+                        <views:NetworkMonitorView/>
+                    </TabItem>
+                    <TabItem>
+                        <views:SettingsView/>
+                    </TabItem>
+                    <TabItem>
+                        <views:AboutView/>
+                    </TabItem>
+                </TabControl>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

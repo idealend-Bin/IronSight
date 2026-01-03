@@ -1,0 +1,14 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="IronSight.App.UI/IronSight.App.UI.csproj" />
+  <Project Path="IronSight.Core.Native/IronSight.Core.Native.vcxproj" Id="d73af0f8-546d-4f7a-b274-3cb2875c95cd" />
+  <Project Path="IronSight.Extensions.Py/IronSight.Extensions.Py.pyproj" Type="888888a0-9f3d-457c-b088-3a5042f75d52" Id="2954199c-4a75-426a-9d0d-0cbc50c4ac6e">
+    <Platform Project="AnyCPU" />
+    <Build Project="false" />
+  </Project>
+  <Project Path="IronSight.Interop/IronSight.Interop.csproj" />
+</Solution>

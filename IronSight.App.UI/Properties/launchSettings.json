@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IronSight.App.UI": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

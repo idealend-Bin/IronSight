@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\Memory">
+      <UniqueIdentifier>{eb5d8a39-49f3-4d22-830e-b602ece08da4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Memory">
+      <UniqueIdentifier>{ceaa420a-e44b-49de-84c1-db77667fbbd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Services">
+      <UniqueIdentifier>{c841d7a6-3ac0-459e-a556-6876c058c38e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Services">
+      <UniqueIdentifier>{041349eb-4e16-409d-8c7d-1990c639c6c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Clipboard">
+      <UniqueIdentifier>{d1bc140b-3da4-41b6-8fd3-689675b3b69c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\System">
+      <UniqueIdentifier>{ba5cbe60-0b07-494d-b32a-b83f1362fa23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Clipboard">
+      <UniqueIdentifier>{946b2719-f5ee-4a0d-a167-d00408aa23a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\System">
+      <UniqueIdentifier>{828bcb53-c962-4159-961d-8ccaacd440df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Network">
+      <UniqueIdentifier>{582e4887-238f-4b48-8729-8a98a90e2730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Network">
+      <UniqueIdentifier>{b20251e0-bc6a-4789-a34e-42764c0205eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SystemMonitor.h">
+      <Filter>头文件\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryOptimizer.h">
+      <Filter>头文件\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Clipboard\ClipboardListener.h">
+      <Filter>头文件\Clipboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetworkMethods.h">
+      <Filter>头文件\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network\NetworkMonitor.h">
+      <Filter>头文件\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="System\SystemMethods.h">
+      <Filter>头文件\System</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DllMain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemMonitor.cpp">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Clipboard\ClipboardListener.cpp">
+      <Filter>源文件\Clipboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Memory\MemoryOptimizer.cpp">
+      <Filter>源文件\Memory</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\NetworkMethods.cpp">
+      <Filter>源文件\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network\NetworkMonitor.cpp">
+      <Filter>源文件\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="System\SystemMethods.cpp">
+      <Filter>源文件\System</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

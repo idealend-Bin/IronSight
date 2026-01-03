@@ -1,0 +1,238 @@
+﻿<UserControl x:Class="IronSight.App.UI.Views.AboutView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="800">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer.Resources>
+            <Style TargetType="ScrollBar" BasedOn="{StaticResource FluentScrollBar}"/>
+        </ScrollViewer.Resources>
+        
+        <StackPanel Margin="0,0,0,20">
+            <!-- 头部区域 -->
+            <Grid Margin="0,0,0,32">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Width="70" Height="70" CornerRadius="16">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#60CDFF" Offset="0"/>
+                            <GradientStop Color="#0078D4" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <TextBlock Text="&#xE8FC;" 
+                               FontFamily="Segoe Fluent Icons" 
+                               FontSize="28"
+                               Foreground="White"
+                               HorizontalAlignment="Center" 
+                               VerticalAlignment="Center"/>
+                </Border>
+
+                <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0">
+                    <TextBlock Text="关于 IronSight" Style="{StaticResource PageTitle}"/>
+                    <TextBlock Text="版本 1.0.4-Alpha | 高性能系统深度监控" 
+                               Style="{StaticResource PageSubtitle}"
+                               Margin="0,4,0,0"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- 左侧内容 -->
+                <StackPanel Grid.Column="0" Margin="0,0,20,0">
+                    <!-- 愿景部分 -->
+                    <Border Style="{StaticResource FluentCard}" Margin="0,0,0,24">
+                        <StackPanel>
+                            <TextBlock Text="项目愿景" 
+                                       Foreground="{StaticResource AccentBrush}" 
+                                       FontWeight="SemiBold" 
+                                       FontSize="13"
+                                       Margin="0,0,0,12"/>
+                            <TextBlock TextWrapping="Wrap" 
+                                       Foreground="{StaticResource TextSecondary}" 
+                                       FontSize="14" 
+                                       LineHeight="24">
+                                IronSight 旨在提供一个透明、高性能且现代化的 Windows 系统监控解决方案。
+                                通过深度调用底层 API，我们让每一个字节的流动都清晰可见。
+                                本项目由 <Run Foreground="{StaticResource TextPrimary}" FontWeight="SemiBold">Idealend Bin</Run> 与 <Run Foreground="{StaticResource TextPrimary}" FontWeight="SemiBold">Gemini</Run> 深度协作完成。
+                            </TextBlock>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- License 架构 -->
+                    <TextBlock Text="多层级授权架构" 
+                               Foreground="#A855F7" 
+                               FontWeight="SemiBold" 
+                               FontSize="13"
+                               Margin="0,0,0,12"/>
+
+                    <!-- LGPL 项 -->
+                    <Border Style="{StaticResource FluentCardHoverable}" Padding="16" Margin="0,0,0,12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Background="#20FCE100" Width="44" Height="44" CornerRadius="10">
+                                <TextBlock Text="&#xE82D;" 
+                                           FontFamily="Segoe Fluent Icons" 
+                                           FontSize="18"
+                                           Foreground="{StaticResource WarningBrush}"
+                                           HorizontalAlignment="Center" 
+                                           VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="16,0">
+                                <TextBlock Text="IronSight.Core.Native" 
+                                           Foreground="{StaticResource TextPrimary}" 
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Text="内核模块。修改源码需回馈，允许动态链接。" 
+                                           Foreground="{StaticResource TextTertiary}" 
+                                           FontSize="12" 
+                                           Margin="0,4,0,0"/>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" 
+                                       Text="LGPL v3" 
+                                       Foreground="{StaticResource WarningBrush}" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontFamily="Cascadia Code, Consolas"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- MPL 项 -->
+                    <Border Style="{StaticResource FluentCardHoverable}" Padding="16" Margin="0,0,0,12">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Background="#2060CDFF" Width="44" Height="44" CornerRadius="10">
+                                <TextBlock Text="&#xE8A5;" 
+                                           FontFamily="Segoe Fluent Icons" 
+                                           FontSize="18"
+                                           Foreground="{StaticResource AccentBrush}"
+                                           HorizontalAlignment="Center" 
+                                           VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="16,0">
+                                <TextBlock Text="IronSight.App.UI &amp; Interop" 
+                                           Foreground="{StaticResource TextPrimary}" 
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Text="应用层。保护文件级源码，支持灵活集成。" 
+                                           Foreground="{StaticResource TextTertiary}" 
+                                           FontSize="12" 
+                                           Margin="0,4,0,0"/>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" 
+                                       Text="MPL 2.0" 
+                                       Foreground="{StaticResource AccentBrush}" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontFamily="Cascadia Code, Consolas"/>
+                        </Grid>
+                    </Border>
+
+                    <!-- MIT 项 -->
+                    <Border Style="{StaticResource FluentCardHoverable}" Padding="16">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Border Background="#206CCB5F" Width="44" Height="44" CornerRadius="10">
+                                <TextBlock Text="&#xE943;" 
+                                           FontFamily="Segoe Fluent Icons" 
+                                           FontSize="18"
+                                           Foreground="{StaticResource SuccessBrush}"
+                                           HorizontalAlignment="Center" 
+                                           VerticalAlignment="Center"/>
+                            </Border>
+                            <StackPanel Grid.Column="1" Margin="16,0">
+                                <TextBlock Text="IronSight.Extension.*" 
+                                           Foreground="{StaticResource TextPrimary}" 
+                                           FontWeight="SemiBold"/>
+                                <TextBlock Text="SDK 与插件。极致开放，鼓励生态开发。" 
+                                           Foreground="{StaticResource TextTertiary}" 
+                                           FontSize="12" 
+                                           Margin="0,4,0,0"/>
+                            </StackPanel>
+                            <TextBlock Grid.Column="2" 
+                                       Text="MIT" 
+                                       Foreground="{StaticResource SuccessBrush}" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold" 
+                                       FontFamily="Cascadia Code, Consolas"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+
+                <!-- 右侧边栏 -->
+                <StackPanel Grid.Column="1">
+                    <Border Style="{StaticResource FluentCard}" Margin="0,0,0,16">
+                        <StackPanel>
+                            <TextBlock Text="开发协作" 
+                                       Foreground="{StaticResource TextPrimary}" 
+                                       FontWeight="SemiBold" 
+                                       Margin="0,0,0,16"/>
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,12">
+                                <Ellipse Width="8" Height="8" Fill="{StaticResource AccentBrush}" Margin="0,0,12,0"/>
+                                <StackPanel>
+                                    <TextBlock Text="Idealend Bin" 
+                                               Foreground="{StaticResource TextPrimary}" 
+                                               FontSize="13" 
+                                               FontWeight="Medium"/>
+                                    <TextBlock Text="Native Wrapper与事件集成" 
+                                               Foreground="{StaticResource TextTertiary}" 
+                                               FontSize="11"/>
+                                </StackPanel>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Ellipse Width="8" Height="8" Fill="#A855F7" Margin="0,0,12,0"/>
+                                <StackPanel>
+                                    <TextBlock Text="Gemini" 
+                                               Foreground="{StaticResource TextPrimary}" 
+                                               FontSize="13" 
+                                               FontWeight="Medium"/>
+                                    <TextBlock Text="界面设计与上层代码" 
+                                               Foreground="{StaticResource TextTertiary}" 
+                                               FontSize="11"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+
+                    <Button Style="{StaticResource PrimaryButton}" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="&#xE8A7;" 
+                                       FontFamily="Segoe Fluent Icons" 
+                                       Margin="0,0,8,0" 
+                                       VerticalAlignment="Center"/>
+                            <TextBlock Text="访问 GitHub 仓库"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <Separator Style="{StaticResource FluentSeparator}" Margin="0,32,0,16"/>
+
+            <TextBlock Text="DESIGNED FOR TRANSPARENCY. BUILT FOR PERFORMANCE." 
+                       HorizontalAlignment="Center" 
+                       Foreground="{StaticResource TextDisabled}" 
+                       FontSize="11" 
+                       FontWeight="SemiBold"/>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
