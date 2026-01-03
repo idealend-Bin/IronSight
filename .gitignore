@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Local Developed Files
+/GEMINI.md
+/IronSightRPD.md
+/xamls.txt
+/IFLOW.md
